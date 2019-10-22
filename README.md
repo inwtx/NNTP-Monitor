@@ -33,49 +33,50 @@ Script to monitor a news group for keywords.
  is somewhere in the apas text (a certain discovery) and will send you an email.
 
 
-filePath=${0%/*} # current file path  $filePath/
+filePath=${0%/*} # current file path  $filePath/  
 
-use_server=fleegle.mixmin.net
-newsgp=alt.privacy.anon-server
-emailaddr=your@emailaddr.net
-varCAM=""
-
-if [ ! -e $filePath/CheckApasMsgs.txt ] || [[ ! $(cat $filePath/CheckApasMsgs.txt | wc -l) -gt 0 ]]; then
-   echo "Required file CheckApasMsgs.txt is empty or does not exist!"
-   echo "See instruction # 5."
-   echo "Exiting script!"
-fi
-
-
-sinntp-1.6/nntp-pull -S $use_server $newsgp --limit 20
-
-if [ -e $filePath/$newsgp ]; then
-   sed -i '/Date:/d' $newsgp   # delete unnecessary headers
-   sed -i '/From:/d' $newsgp
-   sed -i '/Injection-Info:/d' $newsgp
-   sed -i '/Message-ID:/d' $newsgp
-   sed -i '/Newsgroups:/d' $newsgp
-   sed -i '/Organization:/d' $newsgp
-   sed -i '/Path:/d' $newsgp
-   sed -i '/X-Abuse:/d' $newsgp
-   sed -i '/Xref:/d' $newsgp
-
-   while read line1; do
-      if [[ $line1 = "e" ]]; then
-         if [[ $(grep -i -c $line1 $filePath/$newsgp) -gt 0 ]]; then
-         mutt -s "Message in APAS." $emailaddr < $filePath/$newsgp
-         break
-         fi
-      fi
-
-      if [[ $(grep -i -c $line1 $filePath/$newsgp) -gt 0 ]]; then
-         varCAM=$(grep Subject $filePath/$newsgp)
-         mutt -s "APAS: $(sed 's/Subject\: '// <<<$varCAM)" $emailaddr < $filePath/$newsgp
-         break   # this added to stop multiple mails due to multiple words found
-      fi
-   done< $filePath/CheckApasMsgs.txt
-
-   rm $filePath/$newsgp
-fi
-
-exit 0  
+use_server=fleegle.mixmin.net  
+newsgp=alt.privacy.anon-server  
+emailaddr=your@emailaddr.net  
+varCAM=""  
+  
+if [ ! -e $filePath/CheckApasMsgs.txt ] || [[ ! $(cat $filePath/CheckApasMsgs.txt | wc -l) -gt 0 ]]; then  
+   echo "Required file CheckApasMsgs.txt is empty or does not exist!"  
+   echo "See instruction # 5."  
+   echo "Exiting script!"  
+fi  
+  
+  
+sinntp-1.6/nntp-pull -S $use_server $newsgp --limit 20  
+  
+if [ -e $filePath/$newsgp ]; then  
+   sed -i '/Date:/d' $newsgp   # delete unnecessary headers  
+   sed -i '/From:/d' $newsgp  
+   sed -i '/Injection-Info:/d' $newsgp  
+   sed -i '/Message-ID:/d' $newsgp  
+   sed -i '/Newsgroups:/d' $newsgp  
+   sed -i '/Organization:/d' $newsgp  
+   sed -i '/Path:/d' $newsgp  
+   sed -i '/X-Abuse:/d' $newsgp  
+   sed -i '/Xref:/d' $newsgp  
+  
+   while read line1; do  
+      if [[ $line1 = "e" ]]; then  
+         if [[ $(grep -i -c $line1 $filePath/$newsgp) -gt 0 ]]; then  
+         mutt -s "Message in APAS." $emailaddr < $filePath/$newsgp  
+         break  
+         fi  
+      fi  
+  
+      if [[ $(grep -i -c $line1 $filePath/$newsgp) -gt 0 ]]; then  
+         varCAM=$(grep Subject $filePath/$newsgp)  
+         mutt -s "APAS: $(sed 's/Subject\: '// <<<$varCAM)" $emailaddr < $filePath/$newsgp  
+         break   # this added to stop multiple mails due to multiple words found  
+      fi  
+   done< $filePath/CheckApasMsgs.txt  
+  
+   rm $filePath/$newsgp  
+fi  
+  
+exit 0    
+  
