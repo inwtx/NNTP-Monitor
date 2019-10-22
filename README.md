@@ -1,8 +1,6 @@
 # NNTP-Monitor
 Script to monitor a news group for keywords.
   
-#!/bin/bash
-
  This script uses the small (200k) nntp client 'sinntp' to check for keywords contained in
  alt.privacy.anon-server messages.  If any of the keywords (case insensitive) are found,
  the script then will sends an email to the designated email address assigned to the
@@ -31,7 +29,9 @@ Script to monitor a news group for keywords.
  Note: to test to see if the code is running correctly, temporarily put the single letter e
  on a single line within CheckApasMsgs.txt.  The script will check to see if the letter e
  is somewhere in the apas text (a certain discovery) and will send you an email.
-
+ 
+``` 
+#!/bin/bash
 
 filePath=${0%/*} # current file path  $filePath/  
 
@@ -79,4 +79,4 @@ if [ -e $filePath/$newsgp ]; then
 fi  
   
 exit 0    
-  
+```  
