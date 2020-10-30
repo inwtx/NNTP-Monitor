@@ -23,7 +23,8 @@ Script to monitor a news group for keywords.
  5. Change the email address 'your@emailaddr.net' in the CheckApasMsgs.sh script.
  6. Before setting up the cronjob below, execute the script manually because it will take a
     few minutes to initially get the articles.  Only the last 20 articles will be downloaded
-    to your serve at a given time.  Do not interrupt the download: ./CheckApasMsgs.sh
+    to your serve at a given time.  Do not interrupt the download: ./CheckApasMsgs.sh  
+    (Wait a few minutes before performing #7)  
  7. A cronjob in the /home user is used to execute this script:  
  &nbsp;&nbsp;&nbsp;*/1 * * * * ./CheckApasMsgs.sh &> /dev/null
 
