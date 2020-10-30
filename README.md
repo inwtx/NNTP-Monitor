@@ -16,10 +16,10 @@ Script to monitor a news group for keywords.
     name should be in CheckApasMsgs.txt so you will get notified of APAS messages to
     (or about) you.
  3. Download sinntp-1.6.tar.gz into the same /home directory and untar it:  
- &nbsp;&nbsp;&nbsp;'wget --no-check-certificate https://github.com/jwilk/sinntp/releases/download/1.6/sinntp-1.6.tar.gz'  
- &nbsp;&nbsp;&nbsp;'tar zxvpf sinntp-1.6.tar.gz'
- 4. (sinntp-1.6.tar.gz can also be found here:  
- &nbsp;&nbsp;&nbsp;https://inwtx.net/sinntp-1.6.tar.gz)  
+ &nbsp;&nbsp;&nbsp;wget --no-check-certificate https://github.com/jwilk/sinntp/releases/download/1.6/sinntp-1.6.tar.gz  
+ &nbsp;&nbsp;&nbsp;tar zxvpf sinntp-1.6.tar.gz  
+ 4. sinntp-1.6.tar.gz can also be found here:  
+ &nbsp;&nbsp;&nbsp;https://inwtx.net/sinntp-1.6.tar.gz  
  5. Change the email address 'your@emailaddr.net' in the CheckApasMsgs.sh script.
  6. Before setting up the cronjob below, execute the script manually because it will take a
     few minutes to initially get the articles.  Only the last 20 articles will be downloaded
