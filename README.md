@@ -15,16 +15,17 @@ Script to monitor a news group for keywords.
     to search for on separate lines within that file.  At the very least, your remailer
     name should be in CheckApasMsgs.txt so you will get notified of APAS messages to
     (or about) you.
- 3. Download sinntp-1.6.tar.gz into the same /home directory and untar it:
-    'wget --no-check-certificate https://github.com/jwilk/sinntp/releases/download/1.6/sinntp-1.6.tar.gz'
-    'tar zxvpf sinntp-1.6.tar.gz'
- 4. (sinntp-1.6.tar.gz can also be found here: https://inwtx.net/sinntp-1.6.tar.gz)
+ 3. Download sinntp-1.6.tar.gz into the same /home directory and untar it:  
+ &nbsp;&nbsp;&nbsp;'wget --no-check-certificate https://github.com/jwilk/sinntp/releases/download/1.6/sinntp-1.6.tar.gz'  
+ &nbsp;&nbsp;&nbsp;'tar zxvpf sinntp-1.6.tar.gz'
+ 4. (sinntp-1.6.tar.gz can also be found here:  
+ &nbsp;&nbsp;&nbsp;https://inwtx.net/sinntp-1.6.tar.gz)  
  5. Change the email address 'your@emailaddr.net' in the CheckApasMsgs.sh script.
  6. Before setting up the cronjob below, execute the script manually because it will take a
     few minutes to initially get the articles.  Only the last 20 articles will be downloaded
     to your serve at a given time.  Do not interrupt the download: ./CheckApasMsgs.sh
- 7. A cronjob in the /home user is used to execute this script:
-    */1 * * * * ./CheckApasMsgs.sh &> /dev/null
+ 7. A cronjob in the /home user is used to execute this script:  
+ &nbsp;&nbsp;&nbsp;*/1 * * * * ./CheckApasMsgs.sh &> /dev/null
 
  Note: to test to see if the code is running correctly, temporarily put the single letter e
  on a single line within CheckApasMsgs.txt.  The script will check to see if the letter e
