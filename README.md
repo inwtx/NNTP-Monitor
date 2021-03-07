@@ -25,7 +25,7 @@ Script to monitor a news group for keywords.
     few minutes to initially get the articles.  Only the last 20 articles will be downloaded
     to your serve at a given time.  Do not interrupt the download: ./CheckApasMsgs.sh  
     (Wait a few minutes before performing #7)  
- 7. A cronjob in the /home user is used to execute this script:  
+ 7. A cronjob in the /home/user is used to execute this script:  
  &nbsp;&nbsp;&nbsp;*/1 * * * * ./CheckApasMsgs.sh &> /dev/null
 
  Note: to test to see if the code is running correctly, temporarily put the single letter e
