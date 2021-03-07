@@ -11,11 +11,11 @@ Script to monitor a news group for keywords.
  1. Place this script in its entirety into a file named CheckApasMsgs.sh in the /home
     directory of any user (not root, not user mix, not any mixmaster user) and perform a
     'sudo chmod 755 CheckApasMsgs.sh'.
- 2. Create a file named CheckApasMsgs.txt in the same /home directory and place keyword(s)
+ 2. Create a file named CheckApasMsgs.txt in the same /home/user directory and place keyword(s)
     to search for on separate lines within that file.  At the very least, your remailer
     name should be in CheckApasMsgs.txt so you will get notified of APAS messages to
     (or about) you.
- 3. Download sinntp-1.6.tar.gz into the same /home directory and untar it:  
+ 3. Download sinntp-1.6.tar.gz into the same /home/user directory and untar it:  
  &nbsp;&nbsp;&nbsp;wget --no-check-certificate https://github.com/jwilk/sinntp/releases/download/1.6/sinntp-1.6.tar.gz  
  &nbsp;&nbsp;&nbsp;tar zxvpf sinntp-1.6.tar.gz  
  4. sinntp-1.6.tar.gz can also be found here:  
