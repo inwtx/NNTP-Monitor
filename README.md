@@ -6,7 +6,7 @@ Script to monitor a news group for keywords.
  the script then will sends an email to the designated email address assigned to the
  'emailaddr=' variable below.  This can ensure that remailer sysops are quickly made
  aware that there are messages concerning them on APAS.
- Note: 'sinntp' requires python3.  Check presence by entering 'python3 -V'.
+ Note: 'sinntp' requires python3 is installed.  Check presence by entering 'python3 -V'.
 
  1. Place this script in its entirety into a file named CheckApasMsgs.sh in the /home
     directory of any user (not root, not user mix, not any mixmaster user) and perform a
